@@ -1,10 +1,18 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import React from 'react'
+// React: la librería principal
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
+import ReactDOM from 'react-dom/client'
+// ReactDOM: dibuja React en el navegador
+
+import App from './App.jsx'
+// Importamos el componente raíz (nuestra Agenda ADSO)
+
+import './index.css'
+// Importamos los estilos globales
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
     <App />
-  </StrictMode>,
-)
+    {/* Aquí montamos nuestra Agenda ADSO */}
+  </React.StrictMode>,
+);
