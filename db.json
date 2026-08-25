@@ -1,0 +1,26 @@
+{
+  "contactos": [
+    {
+      "id": "1",
+      "nombre": "Gustavo",
+      "telefono": "3217532037",
+      "correo": "gabodorado@gmail.com",
+      "etiqueta": "profe"
+    },
+    {
+      "nombre": "jaider boa",
+      "telefono": "301 546 6237",
+      "correo": "jaiderboita23@gmail.com",
+      "etiqueta": "empleado",
+      "id": "dlflUySvCTo"
+    },
+    {
+      "nombre": "camila perez",
+      "telefono": "300 123 4567",
+      "correo": "camila@sena.edu.co",
+      "etiqueta": "trabajo",
+      "id": "rmHNievtmoI"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
