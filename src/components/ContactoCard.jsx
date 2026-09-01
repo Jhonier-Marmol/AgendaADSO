@@ -1,4 +1,6 @@
-// src/components/ContactoCard.jsx
+// Archivo: src/components/ContactoCard.jsx
+// Componente que muestra la información de un contacto.
+// Permite editar y eliminar el contacto.
 
 export default function ContactoCard({
   id,
@@ -6,39 +8,56 @@ export default function ContactoCard({
   telefono,
   correo,
   etiqueta,
-  onEliminar
+  onEditar,
+  onEliminar,
 }) {
   return (
     <article className="bg-white border border-gray-200 rounded-xl shadow-sm p-5">
 
-      {/* Nombre */}
-      <h3 className="text-xl font-bold text-gray-900 mb-3">
-        {nombre}
-      </h3>
-
       {/* Información del contacto */}
-      <div className="text-gray-700 mb-5 space-y-1">
-        <p>
-          <strong>Teléfono:</strong> {telefono}
-        </p>
+      <div className="flex justify-between items-start">
 
-        <p>
-          <strong>Correo:</strong> {correo}
-        </p>
+        <div>
+          <h3 className="text-xl font-bold text-gray-800">
+            {nombre}
+          </h3>
 
-        <p>
-          <strong>Etiqueta:</strong> {etiqueta}
-        </p>
+          <p className="text-gray-600 mt-2">
+            📞 {telefono}
+          </p>
+
+          <p className="text-gray-600">
+            📧 {correo}
+          </p>
+
+          <span className="inline-block bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm mt-2">
+            {etiqueta}
+          </span>
+        </div>
+
       </div>
 
-      {/* Botón eliminar */}
-      <div className="flex justify-start">
+      {/* Botones */}
+      <div className="flex gap-2 mt-4">
+
+        {/* Botón Editar */}
         <button
-          onClick={() => onEliminar(id)}
-          className="bg-red-500 hover:bg-red-600 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+          type="button"
+          onClick={() => onEditar()}
+          className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg"
+        >
+          Editar
+        </button>
+
+        {/* Botón Eliminar */}
+        <button
+          type="button"
+          onClick={() => onEliminar()}
+          className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg"
         >
           Eliminar
         </button>
+
       </div>
 
     </article>
