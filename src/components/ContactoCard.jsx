@@ -23,11 +23,11 @@ export default function ContactoCard({
           </h3>
 
           <p className="text-gray-600 mt-2">
-            📞 {telefono}
+             {telefono}
           </p>
 
           <p className="text-gray-600">
-            📧 {correo}
+             {correo}
           </p>
 
           <span className="inline-block bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm mt-2">
