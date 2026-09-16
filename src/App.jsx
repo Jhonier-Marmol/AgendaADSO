@@ -4,7 +4,9 @@
 // - Vista "contactos": listado, búsqueda, ordenamiento, edición y eliminación.
 // - Indicador nuevo: contactos por categoría.
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
+import { useAuth } from "./context/AuthContext"
 
 import {
   listarContactos,
@@ -19,6 +21,15 @@ import FormularioContacto from "./components/FormularioContacto";
 import ContactoCard from "./components/ContactoCard";
 
 function App() {
+
+  const navigate = useNavigate();
+  const { logout } = useAuth();
+
+  const cerrarSesion = () => {
+    logout();
+    navigate("/login");
+  };
+
   // Estado con todos los contactos obtenidos desde la API
   const [contactos, setContactos] = useState([]);
 
@@ -234,17 +245,29 @@ function App() {
 
           </div>
 
-          <div className="text-right">
+          <div className="flex items-center gap-4">
 
-            <p className="text-[10px] uppercase tracking-[0.25em] text-slate-400">
-              SENA CTMA
-            </p>
+  <div className="text-right">
 
-            <p className="text-xs text-slate-200">
-              Ficha {APP_INFO.ficha}
-            </p>
+    <p className="text-[10px] uppercase tracking-[0.25em] text-slate-400">
+      SENA CTMA
+    </p>
 
-          </div>
+    <p className="text-xs text-slate-200">
+      Ficha {APP_INFO.ficha}
+    </p>
+
+  </div>
+
+  <button
+    type="button"
+    onClick={cerrarSesion}
+    className="bg-red-500 hover:bg-red-600 text-white text-xs md:text-sm font-semibold px-4 py-2 rounded-xl transition"
+  >
+    Cerrar sesión
+  </button>
+
+</div>
 
         </div>
       </header>
